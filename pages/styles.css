@@ -5,6 +5,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x:hidden;
+  overflow-y:auto;
 }
 
 header {
@@ -17,8 +19,8 @@ header {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
-  margin: 0;
+h1 {
+  text-align:center;
 }
 
 header ul {
@@ -32,9 +34,23 @@ header ul li {
   margin-left: 20px;
 }
 
-#content {
-  flex: 1;
-  padding: 10px;
+.survey-2{
+height:15em;
+width:15em;
+border-radius:50%;
+margin-bottom:1.2em;
+flex-direction:row;
+}
+
+.survey-photo{
+height:100%;
+width:100%;
+border-radius:50%;
+
+}
+.caption{
+padding-left:2.8rem;
+font-size:2 rem;
 }
 
 footer {
@@ -44,4 +60,51 @@ footer {
   justify-content: center;
   align-items: center;
   margin-top: auto;
+}
+
+.middle {
+  transition: 0.5s ease;
+  opacity: 0;
+  position:absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  border-radius: 10%;
+}
+.container:hover .photo {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+  transform: scale(1.4) translateX(-5rem) translateY(-1.5rem);
+}
+.text {
+  background-color: transparent;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1rem;
+}
+#row-1 {
+  display: flex;
+  justify-content: space-evenly;
+}
+#row-2 {
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+.container {
+  position: relative;
+  width: 8vw;
+  height: 8vh;
+  margin-top: 0.8rem;
+  margin-left: 0.7rem;
+  margin-right: 0.7rem;
+  border-radius: 5%;
+  
 }
