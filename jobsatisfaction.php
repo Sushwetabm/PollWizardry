@@ -4,16 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Job Satisfaction and Fulfillment Survey</title>
-  <link rel="stylesheet" href="jobsatisfaction.css">
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      margin: 20px auto;
+    }
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
 </head>
-
 <body>
 
 <?php
   // Replace these variables with your actual database connection details
   $servername = "localhost";
   $username = "root";
-  $password = "";
+  $password = "Sush#2004";
   $dbname = "pollwizardry";
   $table = "jobsatisfactionq";
 
@@ -33,6 +46,15 @@
   <form action="jobsatisfaction_submit.php" method="post">
     <h1>Job Satisfaction and Fulfillment</h1>
 
+    <table>
+      <thead>
+        <tr>
+          <th>Question</th>
+          <th>Options</th>
+        </tr>
+      </thead>
+      <tbody>
+
 <?php
   if ($result->num_rows > 0) {
     // Output data of each row
@@ -48,15 +70,16 @@
       echo "</tr>";
     }
   } else {
-    echo "0 results";
+    echo "<tr><td colspan='2'>0 results</td></tr>";
   }
 
   // Close connection
   $conn->close();
 ?>
 
-
+      </tbody>
     </table>
+
     <br/>
     <input type="submit" value="Submit">
   </form>
