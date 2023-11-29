@@ -1,4 +1,6 @@
 html, body {
+  background-color: #00e1ed;
+background-image: url('/assets/swirl.png');
     font-family: Verdana, sans-serif;
     font-size: 15px;
     line-height: 1.5;
@@ -52,15 +54,37 @@ html, body {
     float:left;
     width:100%;
 }
-.text_1, .text_2, .text_3, .text_4, .text_5, .text_6, .text_7, .text_8, .text_9, .text_10, .text_11, .text_12 {
+.survey-heading-box {
+  border: 2px solid #3498db;
+  padding: 8px;
+  background-color:aliceblue;
+  text-align: center; 
+  width: 350px;
+  margin: 0 auto;
+  border-radius: 10px;  
+}
+.slogan{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.text_1 {
+  animation: text1;
+}
+
+.text_2 {
+  animation: text2;
+}
+
+.text_1, .text_2 {
+  overflow: hidden;
+  white-space: nowrap;
   display: inline-block;
   position: relative;
-  animation-duration: 12s; /* Adjust the duration as needed */
+  animation-duration: 15s;
   animation-timing-function: steps(25, end);
   animation-iteration-count: infinite;
 }
 
-.text_1::after, .text_2::after, .text_3::after, .text_4::after, .text_5::after, .text_6::after, .text_7::after, .text_8::after, .text_9::after, .text_10::after, .text_11::after, .text_12::after {
+.text_1::after, .text_2::after {
   content: "|";
   position: absolute;
   right: 0;
@@ -69,61 +93,23 @@ html, body {
   animation-timing-function: steps(1, end);
 }
 
-@keyframes textAnimation {
-  0%, 100% {
+@keyframes text2 {
+  0%, 50%, 100% {
     width: 0;
   }
-  10%, 90% {
-    width: 17em;
+  
+  60%, 90% {
+    width: 10em;
   }
 }
 
-.text_1 {
-  animation: textAnimation 12s 0s infinite;
-}
-
-.text_2 {
-  animation: textAnimation 12s 2s infinite;
-}
-
-.text_3 {
-  animation: textAnimation 12s 4s infinite;
-}
-
-.text_4 {
-  animation: textAnimation 12s 6s infinite;
-}
-
-.text_5 {
-  animation: textAnimation 12s 8s infinite;
-}
-
-.text_6 {
-  animation: textAnimation 12s 10s infinite;
-}
-
-.text_7 {
-  animation: textAnimation 12s 12s infinite;
-}
-
-.text_8 {
-  animation: textAnimation 12s 14s infinite;
-}
-
-.text_9 {
-  animation: textAnimation 12s 16s infinite;
-}
-
-.text_10 {
-  animation: textAnimation 12s 18s infinite;
-}
-
-.text_11 {
-  animation: textAnimation 12s 20s infinite;
-}
-
-.text_12 {
-  animation: textAnimation 12s 22s infinite;
+@keyframes text1 {
+  0%, 50%, 100% {
+    width: 0;
+  }
+  10%, 40% {
+    width: 11em;
+  }
 }
 
 @keyframes caret {
