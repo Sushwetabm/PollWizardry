@@ -52,3 +52,85 @@ html, body {
     float:left;
     width:100%;
 }
+.text_1, .text_2, .text_3, .text_4, .text_5, .text_6, .text_7, .text_8, .text_9, .text_10, .text_11, .text_12 {
+  display: inline-block;
+  position: relative;
+  animation-duration: 12s; /* Adjust the duration as needed */
+  animation-timing-function: steps(25, end);
+  animation-iteration-count: infinite;
+}
+
+.text_1::after, .text_2::after, .text_3::after, .text_4::after, .text_5::after, .text_6::after, .text_7::after, .text_8::after, .text_9::after, .text_10::after, .text_11::after, .text_12::after {
+  content: "|";
+  position: absolute;
+  right: 0;
+  animation: caret infinite;
+  animation-duration: 1s;
+  animation-timing-function: steps(1, end);
+}
+
+@keyframes textAnimation {
+  0%, 100% {
+    width: 0;
+  }
+  10%, 90% {
+    width: 17em;
+  }
+}
+
+.text_1 {
+  animation: textAnimation 12s 0s infinite;
+}
+
+.text_2 {
+  animation: textAnimation 12s 2s infinite;
+}
+
+.text_3 {
+  animation: textAnimation 12s 4s infinite;
+}
+
+.text_4 {
+  animation: textAnimation 12s 6s infinite;
+}
+
+.text_5 {
+  animation: textAnimation 12s 8s infinite;
+}
+
+.text_6 {
+  animation: textAnimation 12s 10s infinite;
+}
+
+.text_7 {
+  animation: textAnimation 12s 12s infinite;
+}
+
+.text_8 {
+  animation: textAnimation 12s 14s infinite;
+}
+
+.text_9 {
+  animation: textAnimation 12s 16s infinite;
+}
+
+.text_10 {
+  animation: textAnimation 12s 18s infinite;
+}
+
+.text_11 {
+  animation: textAnimation 12s 20s infinite;
+}
+
+.text_12 {
+  animation: textAnimation 12s 22s infinite;
+}
+
+@keyframes caret {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
