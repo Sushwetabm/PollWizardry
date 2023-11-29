@@ -26,7 +26,7 @@
   // Replace these variables with your actual database connection details
   $servername = "localhost";
   $username = "root";
-  $password = "Sush#2004";
+  $password = "";
   $dbname = "pollwizardry";
   $table = "jobsatisfactionq";
 

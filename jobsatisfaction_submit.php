@@ -1,47 +1,43 @@
 <?php
+// Replace these variables with your actual database connection details
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "pollwizardry";
+$tableA = "jobsatisfactiona";
 
+// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Fetch the submitted data
-foreach ($_POST as $key => $value) {
-    // The $key should be in the format "qX", where X is the question ID
-    $qid = str_replace("q", "", $key);
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Loop through each question
+    foreach ($_POST as $key => $value) {
+        // Check if the field is a question field
+        if (substr($key, 0, 1) == 'q') {
+            $qid = substr($key, 1); // Extract QID from the field name
 
-    // Initialize $stmt
-    $stmt = null;
+            // Update the corresponding row in the JobSatisfactionA table
+            $sql = "UPDATE $tableA SET Option1 = Option1 + " . ($value == 'A' ? 1 : 0) . ",
+                                        Option2 = Option2 + " . ($value == 'B' ? 1 : 0) . ",
+                                        Option3 = Option3 + " . ($value == 'C' ? 1 : 0) . ",
+                                        Option4 = Option4 + " . ($value == 'D' ? 1 : 0) . "
+                    WHERE QID = $qid";
 
-    // Check if the submitted option exists for the respective question
-    if (array_key_exists($value, $_POST)) {
-        $sql = "SELECT * FROM JobSatisfactionA WHERE QID = ? AND $value IN (Option1, Option2, Option3, Option4)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("i", $qid);
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        if ($result->num_rows > 0) {
-            // The submitted option exists, so update the count
-            $row = $result->fetch_assoc();
-            $count = $row[$value] + 1;
-            $sql = "UPDATE JobSatisfactionA SET $value = ? WHERE QID = ?";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ii", $count, $qid);
-            $stmt->execute();
+            $conn->query($sql);
         }
     }
-    
-    // Close $stmt only if it's not null
-    if ($stmt !== null) {
-        $stmt->close();
-    }
+
+    echo "Survey data successfully submitted!";
+} else {
+    echo "Invalid request";
 }
 
+// Close connection
 $conn->close();
 ?>
