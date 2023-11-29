@@ -5,6 +5,9 @@ background-image: url('/assets/swirl.png');
     font-size: 15px;
     line-height: 1.5;
  }
+ .name{
+  font-size: 3.5em;
+ }
  body {
     margin: 0;
     padding: 0;
