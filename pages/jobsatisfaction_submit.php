@@ -51,7 +51,6 @@
 <body>
 
 <?php
-// Replace these variables with your actual database connection details
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -59,23 +58,17 @@ $dbname = "pollwizardry";
 $tableQ = "jobsatisfactionq";
 $tableA = "jobsatisfactiona";
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Loop through each question
     foreach ($_POST as $key => $value) {
-        // Check if the field is a question field
         if (substr($key, 0, 1) == 'q') {
-            $qid = substr($key, 1); // Extract QID from the field name
+            $qid = substr($key, 1); 
 
-            // Update the corresponding row in the JobSatisfactionA table
             $sql = "UPDATE $tableA SET Option1 = Option1 + " . ($value == 'A' ? 1 : 0) . ",
                                         Option2 = Option2 + " . ($value == 'B' ? 1 : 0) . ",
                                         Option3 = Option3 + " . ($value == 'C' ? 1 : 0) . ",
@@ -89,16 +82,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Survey data successfully submitted!";
 }
 
-// Fetch questions and options from JobSatisfactionQ
 $sql = "SELECT * FROM $tableQ";
 $result = $conn->query($sql);
 
-// Check if any data is available
 if ($result->num_rows > 0) {
-    // Open the table
     echo "<center><table>";
 
-    // Display data in tables and pie charts
     while ($row = $result->fetch_assoc()) {
         $qid = $row['QID'];
         $question = $row['Question'];
@@ -107,19 +96,14 @@ if ($result->num_rows > 0) {
         $option3 = $row['Option3'];
         $option4 = $row['Option4'];
 
-        // Fetch count of each option from JobSatisfactionA
         $countSql = "SELECT Option1, Option2, Option3, Option4 FROM $tableA WHERE QID = $qid";
         $countResult = $conn->query($countSql);
 
         if ($countResult->num_rows > 0) {
-            // Display question and options in a table row
             echo "<tr><td colspan='2'><center><h2>$question</h2></center></td></tr>";
 
-            // Display counts for each option
             $countRow = $countResult->fetch_assoc();
 
-            // Create a canvas for the pie chart with reduced size
-            // Create a canvas for the pie chart with reduced size
             echo "<tr><td><center><canvas id='chart$qid' width='200' height='200'></canvas></center></td></tr>";
             echo "<script>
                     var ctx = document.getElementById('chart$qid').getContext('2d');
@@ -153,13 +137,11 @@ if ($result->num_rows > 0) {
         }
     }
 
-    // Close the table
     echo "</table></center>";
 } else {
     echo "<tr><td colspan='2'>No questions available.</td></tr>";
 }
 
-// Close connection
 $conn->close();
 ?>
 
