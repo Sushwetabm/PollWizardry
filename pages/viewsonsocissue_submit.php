@@ -54,8 +54,8 @@ $servername = "localhost";
 $username = "root";
 $password = "Sush#2004";
 $dbname = "pollwizardry";
-$tableQ = "socialissueq";
-$tableA = "socialissuea";
+$tableQ = "socialissuesq";
+$tableA = "socialissuesa";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

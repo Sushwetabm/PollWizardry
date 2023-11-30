@@ -78,7 +78,7 @@
   $username = "root";
   $password = "Sush#2004";
   $dbname = "pollwizardry";
-  $table = "socialissueq";
+  $table = "socialissuesq";
   $conn = new mysqli($servername, $username, $password, $dbname);
 
   if ($conn->connect_error) {
