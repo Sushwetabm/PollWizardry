@@ -1,0 +1,383 @@
+CREATE DATABASE IF NOT EXISTS pollwizardry;
+
+use pollwizardry;
+
+CREATE TABLE JobSatisfactionQ (
+    QID INT PRIMARY KEY AUTO_INCREMENT,
+    Question VARCHAR(255),
+    Option1 VARCHAR(100),
+    Option2 VARCHAR(100),
+    Option3 VARCHAR(100),
+    Option4 VARCHAR(100)
+);
+
+CREATE TABLE JobSatisfactionA (
+    QID INT,
+    Option1 INT,
+    Option2 INT,
+    Option3 INT,
+    Option4 INT,
+    FOREIGN KEY (QID) REFERENCES JobSatisfactionQ(QID)
+);
+
+CREATE TABLE ProfPerHarmonyQ (
+    QID INT PRIMARY KEY AUTO_INCREMENT,
+    Question VARCHAR(255),
+    Option1 VARCHAR(100),
+    Option2 VARCHAR(100),
+    Option3 VARCHAR(100),
+    Option4 VARCHAR(100)
+);
+
+CREATE TABLE ProfPerHarmonyA (
+    QID INT,
+    Option1 INT,
+    Option2 INT,
+    Option3 INT,
+    Option4 INT,
+    FOREIGN KEY (QID) REFERENCES ProfPerHarmonyQ(QID)
+);
+
+CREATE TABLE EducationSatisfactionQ (
+    QID INT PRIMARY KEY AUTO_INCREMENT,
+    Question VARCHAR(255),
+    Option1 VARCHAR(100),
+    Option2 VARCHAR(100),
+    Option3 VARCHAR(100),
+    Option4 VARCHAR(100)
+);
+
+CREATE TABLE EducationSatisfactionA (
+    QID INT,
+    Option1 INT,
+    Option2 INT,
+    Option3 INT,
+    Option4 INT,
+    FOREIGN KEY (QID) REFERENCES EducationSatisfactionQ(QID)
+);
+
+CREATE TABLE SavingBehaviorQ (
+    QID INT PRIMARY KEY AUTO_INCREMENT,
+    Question VARCHAR(255),
+    Option1 VARCHAR(100),
+    Option2 VARCHAR(100),
+    Option3 VARCHAR(100),
+    Option4 VARCHAR(100)
+);
+
+CREATE TABLE SavingBehaviorA (
+    QID INT,
+    Option1 INT,
+    Option2 INT,
+    Option3 INT,
+    Option4 INT,
+    FOREIGN KEY (QID) REFERENCES SavingBehaviorQ(QID)
+);
+
+CREATE TABLE HealthAwarenessQ (
+    QID INT PRIMARY KEY AUTO_INCREMENT,
+    Question VARCHAR(255),
+    Option1 VARCHAR(100),
+    Option2 VARCHAR(100),
+    Option3 VARCHAR(100),
+    Option4 VARCHAR(100)
+);
+
+CREATE TABLE HealthAwarenessA (
+    QID INT,
+    Option1 INT,
+    Option2 INT,
+    Option3 INT,
+    Option4 INT,
+    FOREIGN KEY (QID) REFERENCES HealthAwarenessQ(QID)
+);
+
+CREATE TABLE SocialMediaQ (
+    QID INT PRIMARY KEY AUTO_INCREMENT,
+    Question VARCHAR(255),
+    Option1 VARCHAR(100),
+    Option2 VARCHAR(100),
+    Option3 VARCHAR(100),
+    Option4 VARCHAR(100)
+);
+
+CREATE TABLE SocialMediaA (
+    QID INT,
+    Option1 INT,
+    Option2 INT,
+    Option3 INT,
+    Option4 INT,
+    FOREIGN KEY (QID) REFERENCES SocialMediaQ(QID)
+);
+
+CREATE TABLE TechnologyQ (
+    QID INT PRIMARY KEY AUTO_INCREMENT,
+    Question VARCHAR(255),
+    Option1 VARCHAR(100),
+    Option2 VARCHAR(100),
+    Option3 VARCHAR(100),
+    Option4 VARCHAR(100)
+);
+
+CREATE TABLE TechnologyA (
+    QID INT,
+    Option1 INT,
+    Option2 INT,
+    Option3 INT,
+    Option4 INT,
+    FOREIGN KEY (QID) REFERENCES TechnologyQ(QID)
+);
+
+CREATE TABLE SocialIssuesQ (
+    QID INT PRIMARY KEY AUTO_INCREMENT,
+    Question VARCHAR(255),
+    Option1 VARCHAR(100),
+    Option2 VARCHAR(100),
+    Option3 VARCHAR(100),
+    Option4 VARCHAR(100)
+);
+
+CREATE TABLE SocialIssuesA (
+    QID INT,
+    Option1 INT,
+    Option2 INT,
+    Option3 INT,
+    Option4 INT,
+    FOREIGN KEY (QID) REFERENCES SocialIssuesQ(QID)
+);
+
+CREATE TABLE PersonalDevelopmentQ (
+    QID INT PRIMARY KEY AUTO_INCREMENT,
+    Question VARCHAR(255),
+    Option1 VARCHAR(100),
+    Option2 VARCHAR(100),
+    Option3 VARCHAR(100),
+    Option4 VARCHAR(100)
+);
+
+CREATE TABLE PersonalDevelopmentA (
+    QID INT,
+    Option1 INT,
+    Option2 INT,
+    Option3 INT,
+    Option4 INT,
+    FOREIGN KEY (QID) REFERENCES PersonalDevelopmentQ(QID)
+);
+
+CREATE TABLE TravelQ (
+    QID INT PRIMARY KEY AUTO_INCREMENT,
+    Question VARCHAR(255),
+    Option1 VARCHAR(100),
+    Option2 VARCHAR(100),
+    Option3 VARCHAR(100),
+    Option4 VARCHAR(100)
+);
+
+CREATE TABLE TravelA (
+    QID INT,
+    Option1 INT,
+    Option2 INT,
+    Option3 INT,
+    Option4 INT,
+    FOREIGN KEY (QID) REFERENCES TravelQ(QID)
+);
+
+CREATE TABLE ClimateConsvQ (
+    QID INT PRIMARY KEY AUTO_INCREMENT,
+    Question VARCHAR(255),
+    Option1 VARCHAR(100),
+    Option2 VARCHAR(100),
+    Option3 VARCHAR(100),
+    Option4 VARCHAR(100)
+);
+
+CREATE TABLE ClimateConsvA (
+    QID INT,
+    Option1 INT,
+    Option2 INT,
+    Option3 INT,
+    Option4 INT,
+    FOREIGN KEY (QID) REFERENCES ClimateConsvQ(QID)
+);
+
+CREATE TABLE EmergingTechQ (
+    QID INT PRIMARY KEY AUTO_INCREMENT,
+    Question VARCHAR(255),
+    Option1 VARCHAR(100),
+    Option2 VARCHAR(100),
+    Option3 VARCHAR(100),
+    Option4 VARCHAR(100)
+);
+
+CREATE TABLE EmergingTechA (
+    QID INT,
+    Option1 INT,
+    Option2 INT,
+    Option3 INT,
+    Option4 INT,
+    FOREIGN KEY (QID) REFERENCES EmergingTechQ(QID)
+);
+
+INSERT INTO jobsatisfactionq(QID, Question, Option1, Option2, Option3, Option4) VALUES (1,'How satisfied are you with your current job?','Very satisfied','Somewhat satisfied','Neutral','Not satisfied');
+
+INSERT INTO jobsatisfactionq(Question, Option1, Option2, Option3, Option4) VALUES ('What factors contribute most to your job satisfaction?','Compensation and benefits','Work-life balance','Job responsibilities and challenges','Relationship with colleagues and superiors'),
+('How fulfilled do you feel in your current role?','Extremely fulfilled','Moderately fulfilled','Slightly fulfilled','Not fulfilled at all'),
+('To what extent does professional growth impact your overall job satisfaction?','Very impactful','Moderately impactful','Slightly impactful','Not impactful at all'),
+('How satisfied are you with the work environment and culture?','Very satisfied','Somewhat satisfied','Neutral','Not satisfied'),
+
+('What role does recognition and appreciation play in your job satisfaction?', 'Very important','Moderately important','Slightly important','Not important at all'),
+
+('How well do your current job responsibilities align with your skills and interests?','Perfect alignment','Moderate alignment','Slight alignment','No alignment');
+
+
+INSERT INTO profperharmonyq (QID, Question, Option1, Option2, Option3, Option4)
+VALUES(1, 'How would you rate your current work-life balance?', 'Excellent', 'Good', 'Fair', 'Poor');
+INSERT INTO profperharmonyq (Question, Option1, Option2, Option3, Option4)
+VALUES
+    ('To what extent do you feel work-related stress affects your personal life?', 'Not at all', 'Occasionally', 'Frequently', 'Always'),
+    ('How often do you find yourself working beyond regular working hours?', 'Rarely or never', 'Occasionally', 'Frequently', 'Always'),
+    ('How supportive is your workplace in promoting a healthy work-life balance?', 'Very supportive', 'Somewhat supportive', 'Neutral', 'Not supportive'),
+    ('What activities do you prioritize outside of work to maintain a work-life balance?', 'Family time', 'Hobbies and interests', 'Exercise and wellness', 'Other'),
+    ('How satisfied are you with your ability to detach from work during non-working hours?', 'Very satisfied', 'Satisfied', 'Neutral', 'Unsatisfied'),
+    ('In your opinion, what measures could improve work-life balance in your workplace?', 'Flexible work hours', 'Remote work options', 'Employee wellness programs', 'Other');
+
+INSERT INTO EducationSatisfactionQ (QID, Question, Option1, Option2, Option3, Option4)
+VALUES
+    (1, 'How satisfied are you with your overall educational experience?','Very satisfied','Somewhat satisfied','Neutral','Not satisfied');
+
+INSERT INTO EducationSatisfactionQ (Question, Option1, Option2, Option3, Option4)VALUES
+    ('Which aspect of your educational experience has had the most positive impact?','Quality of instructors','Course content and curriculum','Classmates and peer interactions','Extracurricular activities'),
+    ('To what extent did your education prepare you for your current career?','Very well-prepared','Moderately prepared', 'Slightly prepared','Not prepared at all'),
+    ('How valuable do you consider ongoing education and skill development in your field?','Extremely valuable','Moderately valuable','Slightly valuable','Not valuable at all'),
+    ( 'How satisfied are you with the support services provided by your educational institution?','Very satisfied','Satisfied','Neutral','Unsatisfied'),
+    ('What improvements, if any, would you suggest for the education system?','More practical and hands-on learning','Enhanced career counseling services','Flexible learning options','Other'),
+    ('How likely are you to recommend your alma mater to others based on your experiences?','Very likely','Likely','Unlikely','Very unlikely');
+    USE pollwizardry;
+
+INSERT INTO SavingBehaviorQ (QID, Question, Option1, Option2, Option3, Option4)
+VALUES
+    (1, 'How would you describe your approach to saving money?', 'Aggressive saver', 'Moderate saver', 'Conservative saver', 'Not a saver');
+INSERT INTO SavingBehaviorQ (Question, Option1, Option2, Option3, Option4)
+VALUES('What are your primary motivations for saving money?', 'Emergency fund', 'Retirement planning', 'Major purchases (e.g., home, car)', 'Other (please specify)'),
+    ('How comfortable are you with investment-related decision-making?', 'Very comfortable', 'Moderately comfortable', 'Slightly comfortable', 'Not comfortable at all'),
+    ('What types of investments do you currently have in your portfolio?', 'Stocks', 'Bonds', 'Real estate', 'Other'),
+    ('How do you stay informed about financial and investment matters?', 'Financial news sources', 'Professional financial advice', 'Self-research', 'Other '),
+    ('How satisfied are you with the returns on your current investments?', 'Very satisfied', 'Satisfied', 'Neutral', 'Unsatisfied'),
+    ('In your opinion, what barriers do you face in achieving your financial goals?', 'Lack of financial knowledge', 'Insufficient income', 'High living expenses', 'Other ');
+
+INSERT INTO HealthAwarenessQ (QID, Question, Option1, Option2, Option3, Option4)
+VALUES
+    (1, 'How would you rate your overall physical health?', 'Excellent', 'Good', 'Fair', 'Poor');
+    INSERT INTO HealthAwarenessQ (Question, Option1, Option2, Option3, Option4)
+VALUES
+('To what extent do you prioritize physical exercise in your daily routine?', 'Very high priority', 'Moderate priority', 'Low priority', 'No priority'),
+    ('How often do you engage in activities to manage stress and promote mental well-being?', 'Daily', 'Weekly', 'Occasionally', 'Rarely or never'),
+    ('How comfortable do you feel discussing mental health in your workplace or social circles?', 'Very comfortable', 'Moderately comfortable', 'Slightly comfortable', 'Not comfortable at all'),
+    ('What sources do you rely on for information about maintaining a healthy lifestyle?', 'Healthcare professionals', 'Online health resources', 'Social media', 'Other'),
+    ('How aware are you of mental health resources and support available in your community?', 'Very aware', 'Somewhat aware', 'Not very aware', 'Not aware at all'),
+    ('In your opinion, what initiatives could organizations take to promote employee well-being?', 'Employee assistance programs', 'Mental health awareness campaigns', 'Flexible work arrangements', 'Other');
+
+
+INSERT INTO SocialMediaQ(QID, Question, Option1, Option2, Option3, Option4)
+VALUES
+    (1, 'How much time do you typically spend on social media each day?', 'Less than 30 minutes', '30 minutes to 1 hour', '1 to 2 hours', 'More than 2 hours');
+
+INSERT INTO SocialMediaQ(Question, Option1, Option2, Option3, Option4)
+VALUES
+    ('How do you perceive the impact of social media on your personal relationships?', 'Positive impact', 'Neutral impact', 'Negative impact', 'No impact'),
+    ('What types of content do you most commonly engage with on social media?', 'News and current events', 'Personal updates from friends', 'Entertainment and memes', 'Other'),
+    ('How often do you feel pressured to present an idealized version of your life on social media?', 'Always', 'Often', 'Occasionally', 'Rarely or never'),
+    ('In what ways do you think social media enhances or hinders your social relationships?', 'Facilitates communication', 'Creates misunderstandings', 'Strengthens connections', 'Other'),
+    ('How concerned are you about the impact of social media on mental health?', 'Very concerned', 'Moderately concerned', 'Slightly concerned', 'Not concerned at all'),
+    ('Do you believe social media has influenced your personal relationships positively or negatively?', 'Positively', 'Negatively', 'Both positively and negatively', 'No influence');
+
+
+INSERT INTO TechnologyQ (QID, Question, Option1, Option2, Option3, Option4)
+VALUES
+    ('How dependent are you on technology in your daily life?', 'Very dependent', 'Moderately dependent', 'Slightly dependent', 'Not dependent at all');
+INSERT INTO TechnologyQ (Question, Option1, Option2, Option3, Option4)
+VALUES
+
+    ('How often do you upgrade your electronic devices (e.g., phone, laptop)?', 'Every year', 'Every two years', 'Every three to four years', 'Rarely or never'),
+    ('How well do you balance screen time for work and leisure activities?', 'Very well-balanced', 'Moderately balanced', 'Slightly imbalanced', 'Very imbalanced'),
+    ('How concerned are you about issues like privacy and security in the digital age?', 'Very concerned', 'Moderately concerned', 'Slightly concerned', 'Not concerned at all'),
+    ('What role does technology play in your personal productivity and efficiency?', 'Enhances productivity', 'Neutral impact', 'Hinders productivity', 'Other'),
+    ('How do you manage notifications and interruptions from digital devices?', 'Always respond immediately', 'Schedule specific times to check', 'Turn off notifications', 'Other'),
+    ('In what ways do you see technology positively or negatively impacting your overall well-being?', 'Facilitates connectivity', 'Contributes to stress', 'Enhances convenience', 'Other');
+
+INSERT INTO SocialIssuesQ (QID, Question, Option1, Option2, Option3, Option4)
+VALUES
+    (1,'Gender Equality:', 'Strongly Agree', 'Agree', 'Disagree', 'Strongly Disagree');
+INSERT INTO SocialIssuesQ (Question, Option1, Option2, Option3, Option4)
+VALUES
+
+    ('Environmental Responsibility:', 'Always Take Action', 'Often Take Action', 'Rarely Take Action', 'Never Take Action'),
+    ('Social Justice Advocacy:', 'Actively Participate', 'Support from a Distance', 'Neutral', 'Oppose'),
+    ('Community Involvement:', 'Volunteer Regularly', 'Occasionally Volunteer', 'Rarely Volunteer', 'Never Volunteer'),
+    ('Political Engagement:', 'Active Participant', 'Informed Observer', 'Indifferent', 'Apathetic'),
+    ('Opinions on Diversity:', 'Embrace Diversity', 'Tolerate Diversity', 'Prefer Homogeneity', 'Strongly Prefer Homogeneity'),
+    ('Human Rights Support:', 'Support All Causes', 'Selective Support', 'Indifferent', 'Disapprove of Activism');
+
+INSERT INTO PersonalDevelopmentQ (QID, Question, Option1, Option2, Option3, Option4)
+VALUES
+    (1, 'Continuous Learning:', 'Enthusiastic Learner', 'Occasional Learner', 'Rarely Seek New Knowledge', 'Content with Current Knowledge');
+    INSERT INTO PersonalDevelopmentQ (Question, Option1, Option2, Option3, Option4)
+VALUES
+
+    ('Goal Setting and Achievement:', 'Set and Achieve High Goals', 'Set Goals but Achieve Few', 'Rarely Set Goals', 'Goal-Setting Isn''t Important'),
+    ('Time Management Skills:', 'Excellent Time Manager', 'Adequate Time Manager', 'Struggle with Time Management', 'Poor Time Management'),
+    ('Health and Wellness Focus:', 'Prioritize Health Daily', 'Occasionally Focus on Health', 'Rarely Prioritize Health', 'Neglect Health'),
+    ('Financial Literacy:', 'Expert in Financial Matters', 'Comfortable with Finances', 'Struggle with Finances', 'Lack Financial Knowledge'),
+    ('Emotional Intelligence:', 'High Emotional Intelligence', 'Average Emotional Intelligence', 'Low Emotional Intelligence', 'Unaware of Emotional Intelligence'),
+    ('Networking and Relationship Building:', 'Strong Networking Skills', 'Build Relationships When Necessary', 'Prefer Solitude', 'Struggle with Social Connections');
+
+
+INSERT INTO TravelQ (QID, Question, Option1, Option2, Option3, Option4)
+VALUES
+    (1, 'Preferred Travel Destination:', 'Urban Cities', 'Nature Retreats', 'Historical Sites', 'Adventure Destinations');
+
+INSERT INTO TravelQ (Question, Option1, Option2, Option3, Option4)
+VALUES
+
+    ('Travel Accommodation Choice:', 'Luxury Hotels', 'Boutique Accommodations', 'Budget-Friendly Stays', 'Camping or Hostels'),
+    ('Favorite Travel Activity:', 'Cultural Exploration', 'Outdoor Adventures', 'Culinary Experiences', 'Relaxation by the Beach'),
+    ('Travel Frequency:', 'Multiple Times a Year', 'Once a Year', 'Every Few Years', 'Rarely or Never'),
+    ('Solo or Group Travel:', 'Prefer Solo Travel', 'Enjoy Group Travel', 'Both Solo and Group Travel', 'Rarely Travel'),
+    ('Memorable Travel Experience:', 'Cultural Immersion', 'Adrenaline-Pumping Adventure', 'Serene Nature Encounter', 'Unique Local Encounters'),
+    ('Travel Planning Style:', 'Detailed Itinerary Planner', 'Flexible Planner', 'Spontaneous Traveler', 'Prefer Others to Plan');
+
+USE pollwizardry;
+
+INSERT INTO ClimateConsvQ (QID, Question, Option1, Option2, Option3, Option4)
+VALUES
+    (1, 'What is your level of awareness regarding the concept of climate change?', 'Very aware', 'Somewhat aware', 'Not very aware', 'Not aware at all');
+INSERT INTO ClimateConsvQ (Question, Option1, Option2, Option3, Option4)
+VALUES
+
+
+    ('How do you believe climate change affects your daily life?', 'Significantly', 'Moderately', 'Slightly', 'Not at all'),
+
+    ('How frequently do you engage in conservation activities (e.g., recycling, reducing energy consumption)?', 'Always', 'Often', 'Occasionally', 'Rarely'),
+
+    ('To what extent do you support the use of renewable energy sources to address climate change?', 'Strongly support', 'Support', 'Neutral', 'Oppose'),
+
+    ('How satisfied are you with the government\'s efforts to address climate change?', 'Very satisfied', 'Satisfied', 'Dissatisfied', 'Very dissatisfied'),
+
+    ('Have you participated in any environmental education programs to increase your understanding of climate change?', 'Yes, frequently', 'Yes, occasionally', 'No, but interested', 'No, not interested'),
+
+    ('How much responsibility do individuals bear in addressing climate change, in your opinion?', 'High responsibility', 'Moderate responsibility', 'Low responsibility', 'No responsibility');
+
+USE pollwizardry;
+
+INSERT INTO EmergingTechQ (QID, Question, Option1, Option2, Option3, Option4)
+VALUES
+    (1, 'How open are you to adopting new and emerging technologies in your daily life?', 'Very open', 'Open', 'Neutral', 'Closed');
+INSERT INTO EmergingTechQ (Question, Option1, Option2, Option3, Option4)
+VALUES
+
+    ('When using emerging technologies, how important are ethical considerations to you?', 'Extremely important', 'Important', 'Somewhat important', 'Not important at all'),
+    ('How concerned are you about the potential invasion of privacy related to emerging technologies?', 'Very concerned', 'Concerned', 'Slightly concerned', 'Not concerned at all'),
+    ('Do you believe that emerging technologies will have a positive or negative impact on employment in the future?', 'Very positive', 'Positive', 'Negative', 'Very negative'),
+    ('How important is it to ensure that emerging technologies are accessible to all members of society?', 'Extremely important', 'Important', 'Somewhat important', 'Not important at all'),
+    ('To what extent do you believe society should support and encourage innovation in emerging technologies?', 'Strongly support', 'Support', 'Neutral', 'Oppose'),
+    ('How would you rate your perception of the risks associated with adopting new and emerging technologies?', 'Very high risk', 'High risk', 'Low risk', 'Very low risk');
