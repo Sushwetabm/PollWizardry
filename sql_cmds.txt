@@ -381,3 +381,26 @@ VALUES
     ('How important is it to ensure that emerging technologies are accessible to all members of society?', 'Extremely important', 'Important', 'Somewhat important', 'Not important at all'),
     ('To what extent do you believe society should support and encourage innovation in emerging technologies?', 'Strongly support', 'Support', 'Neutral', 'Oppose'),
     ('How would you rate your perception of the risks associated with adopting new and emerging technologies?', 'Very high risk', 'High risk', 'Low risk', 'Very low risk');
+
+    INSERT INTO jobsatisfactiona(QID, Option1, Option2, Option3, Option4) VALUES (1, 0, 0, 0, 0), (2, 0, 0, 0, 0), (3, 0, 0, 0, 0), (4, 0, 0, 0, 0), (5, 0, 0, 0, 0), (6, 0, 0, 0, 0), (7, 0, 0, 0, 0);
+    INSERT INTO profperharmonya(QID, Option1, Option2, Option3, Option4) VALUES (1, 0, 0, 0, 0), (2, 0, 0, 0, 0), (3, 0, 0, 0, 0), (4, 0, 0, 0, 0), (5, 0, 0, 0, 0), (6, 0, 0, 0, 0), (7, 0, 0, 0, 0);
+
+    INSERT INTO climateconsva(QID, Option1, Option2, Option3, Option4) VALUES (1, 0, 0, 0, 0), (2, 0, 0, 0, 0), (3, 0, 0, 0, 0), (4, 0, 0, 0, 0), (5, 0, 0, 0, 0), (6, 0, 0, 0, 0), (7, 0, 0, 0, 0);
+
+    INSERT INTO educationsatisfactiona(QID, Option1, Option2, Option3, Option4) VALUES (1, 0, 0, 0, 0), (2, 0, 0, 0, 0), (3, 0, 0, 0, 0), (4, 0, 0, 0, 0), (5, 0, 0, 0, 0), (6, 0, 0, 0, 0), (7, 0, 0, 0, 0);
+
+    INSERT INTO emergingtecha(QID, Option1, Option2, Option3, Option4) VALUES (1, 0, 0, 0, 0), (2, 0, 0, 0, 0), (3, 0, 0, 0, 0), (4, 0, 0, 0, 0), (5, 0, 0, 0, 0), (6, 0, 0, 0, 0), (7, 0, 0, 0, 0);
+
+    INSERT INTO healthawarenessa(QID, Option1, Option2, Option3, Option4) VALUES (1, 0, 0, 0, 0), (2, 0, 0, 0, 0), (3, 0, 0, 0, 0), (4, 0, 0, 0, 0), (5, 0, 0, 0, 0), (6, 0, 0, 0, 0), (7, 0, 0, 0, 0);
+
+    INSERT INTO savingbehaviora(QID, Option1, Option2, Option3, Option4) VALUES (1, 0, 0, 0, 0), (2, 0, 0, 0, 0), (3, 0, 0, 0, 0), (4, 0, 0, 0, 0), (5, 0, 0, 0, 0), (6, 0, 0, 0, 0), (7, 0, 0, 0, 0);
+
+    INSERT INTO socialissuesa(QID, Option1, Option2, Option3, Option4) VALUES (1, 0, 0, 0, 0), (2, 0, 0, 0, 0), (3, 0, 0, 0, 0), (4, 0, 0, 0, 0), (5, 0, 0, 0, 0), (6, 0, 0, 0, 0), (7, 0, 0, 0, 0);
+
+    INSERT INTO socialmediaa(QID, Option1, Option2, Option3, Option4) VALUES (1, 0, 0, 0, 0), (2, 0, 0, 0, 0), (3, 0, 0, 0, 0), (4, 0, 0, 0, 0), (5, 0, 0, 0, 0), (6, 0, 0, 0, 0), (7, 0, 0, 0, 0);
+
+    INSERT INTO technologya(QID, Option1, Option2, Option3, Option4) VALUES (1, 0, 0, 0, 0), (2, 0, 0, 0, 0), (3, 0, 0, 0, 0), (4, 0, 0, 0, 0), (5, 0, 0, 0, 0), (6, 0, 0, 0, 0), (7, 0, 0, 0, 0);
+
+    INSERT INTO travela(QID, Option1, Option2, Option3, Option4) VALUES (1, 0, 0, 0, 0), (2, 0, 0, 0, 0), (3, 0, 0, 0, 0), (4, 0, 0, 0, 0), (5, 0, 0, 0, 0), (6, 0, 0, 0, 0), (7, 0, 0, 0, 0);
+
+    
