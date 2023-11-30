@@ -33,7 +33,7 @@
       id="mySidebar"
     >
       <img
-        src="/PollWizardry/assets/logo.svg"
+        src="/assets/logo.svg"
         class="logo-menu"
         height="250"
         width="110"
@@ -44,8 +44,8 @@
         class="w3-bar-item w3-button"
         >Close Menu</a
       >
-      <a href="#create" onclick="w3_close()" class="w3-bar-item w3-button"
-        >Create Survey</a
+      <a href="#take" onclick="w3_close()" class="w3-bar-item w3-button"
+        >Take a Survey</a
       >
       <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button"
         >About Us</a
@@ -57,7 +57,7 @@
 
     <!-- Top menu -->
     <div class="w3-top">
-      <div class="w3-white w3-xlarge" style="max-width: 1200px; margin: auto">
+      <div class="w3-white w3-xlarge" id="#take" style="max-width: 1200px; margin: auto">
         <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
       </div>
     </div>
@@ -75,6 +75,7 @@
     </div>
     <div
       class="w3-main w3-content w3-padding"
+      id="take"
       style="max-width: 1200px; margin-top: 100px"
     >
       <!-- First Photo Grid-->
@@ -82,10 +83,10 @@
         <div class="w3-quarter">
           <a href="jobsatisfaction.php">
             <img
-              src="/PollWizardry/assets/job-satisfaction.png"
+              src="/assets/job-satisfaction.png"
               height="180"
               width="270"
-              alt="Job Satisfaction Image"
+              id="bgimg"
             />
             <h3>Job Satisfaction and Fulfillment</h3>
             <p>
@@ -98,9 +99,10 @@
         <div class="w3-quarter">
           <a href="profperharmony.php">
             <img
-              src="/PollWizardry/assets/work-life.png"
+              src="/assets/work-life.png"
               height="180"
               width="270"
+              id="bgimg"
             />
             <h3>Professional-Personal Harmony</h3>
             <p>
@@ -113,9 +115,10 @@
         <div class="w3-quarter">
           <a href="educationsatisfaction.php">
             <img
-              src="/PollWizardry/assets/education.jpg"
+              src="/assets/education.jpg"
               height="180"
               width="270"
+              id="bgimg"
             />
             <h3>Satisfaction with Educational Experiences</h3>
             <p>
@@ -127,9 +130,10 @@
         <div class="w3-quarter">
           <a href="savingbehavior.php">
             <img
-              src="/PollWizardry/assets/saving.jpg"
+              src="/assets/saving.jpg"
               height="180"
               width="270"
+              id="bgimg"
             />
             <h3>Saving and Investment Behavior</h3>
             <p>
@@ -145,9 +149,10 @@
         <div class="w3-quarter">
           <a href="healthawareness.php">
             <img
-              src="/PollWizardry/assets/health.png"
+              src="/assets/health.png"
               height="180"
               width="270"
+              id="bgimg"
             />
             <h3>Physical and Mental Health Awareness</h3>
             <p>
@@ -159,9 +164,10 @@
         <div class="w3-quarter">
           <a href="socialmedia.php">
             <img
-              src="/PollWizardry/assets/social media.jpg"
+              src="/assets/social media.jpg"
               height="180"
               width="270"
+              id="bgimg"
             />
             <h3>Social Media Usage and Impact on Relationships</h3>
             <p>
@@ -173,9 +179,10 @@
         <div class="w3-quarter">
           <a href="techusagepattern.php">
             <img
-              src="/PollWizardry/assets/tech usage.jpg"
+              src="/assets/tech usage.jpg"
               height="180"
               width="270"
+              id="bgimg"
             />
             <h3>Technology Usage Patterns</h3>
             <p>
@@ -187,9 +194,10 @@
         <div class="w3-quarter">
           <a href="viewsonsocissue.php">
             <img
-              src="/PollWizardry/assets/activism.jpg"
+              src="/assets/activism.jpg"
               height="180"
               width="270"
+              id="bgimg"
             />
             <h3>Views on Social Issues and Activism</h3>
             <p>
@@ -205,9 +213,10 @@
         <div class="w3-quarter">
           <a href="personaldev.php">
             <img
-              src="/PollWizardry/assets/self-development.jpg"
+              src="/assets/self-development.jpg"
               height="180"
               width="270"
+              id="bgimg"
             />
             <h3>Personal Development Initiatives</h3>
             <p>
@@ -219,9 +228,10 @@
         <div class="w3-quarter">
           <a href="travelpref.php">
             <img
-              src="/PollWizardry/assets/travel.jpg"
+              src="/assets/travel.jpg"
               height="180"
               width="270"
+              id="bgimg"
             />
             <h3>Travel Preferences and Experiences</h3>
             <p>
@@ -233,9 +243,10 @@
         <div class="w3-quarter">
           <a href="viewsonclimate.php">
             <img
-              src="/PollWizardry/assets/climate-change.jpg"
+              src="/assets/climate-change.jpg"
               height="180"
               width="270"
+              id="bgimg"
             />
             <h3>Views on Climate Change and Conservation</h3>
             <p>
@@ -247,9 +258,10 @@
         <div class="w3-quarter">
           <a href="emergingtech.php">
             <img
-              src="/PollWizardry/assets/emerging tech.jpg"
+              src="/assets/emerging tech.jpg"
               height="180"
               width="270"
+              id="bgimg"
             />
             <h3>Attitudes Toward Emerging Technologies</h3>
             <p>
@@ -265,7 +277,7 @@
 
       <!-- About Section -->
       <div class="w3-container w3-padding-32 w3-center">
-        <h3><u>About Us</u></h3>
+        <h3 id="about"><u>About Us</u></h3>
         <p>
           Welcome to Poll Wizardry, your enchanting portal to seamless survey
           creation and a treasure trove of valuable data! At Poll Wizardry, we
@@ -306,7 +318,7 @@
       <!-- Footer -->
       <footer class="w3-row-padding w3-padding-32">
         <div class="w3-third">
-          <h3>Contact Us</h3>
+          <h3 id="contact">Contact Us</h3>
           <ul>
             <li class="mail">
               <a href="mailto:sushwetabm@gmail.com">sushwetabm@gmail.com</a>

@@ -8,6 +8,16 @@ background-image: url('/assets/swirl.png');
  .name{
   font-size: 3.5em;
  }
+ a{
+  text-decoration:none;
+ }
+ #bgimg{
+  opacity: 1; 
+	transition: opacity 0.3s ease-in-out;
+ }
+ #bgimg:hover { 
+	opacity: 0.5; 
+}
  body {
     margin: 0;
     padding: 0;
