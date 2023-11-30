@@ -4,42 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Satisfaction Survey</title>
+    <!-- Add Chart.js library -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: rgba(255, 206, 86, 0.7);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 70%;
+            margin-bottom: 20px;
+            background-color: #f4f4f4;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
         canvas {
-            max-width: 200px;
+            max-width: 80%;
             max-height: 200px;
             width: auto;
             height: auto;
+            display: block;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
 
 <?php
-
 $servername = "localhost";
 $username = "root";
-$password = "Sush#2004";
+$password = "";
 $dbname = "pollwizardry";
 $tableQ = "jobsatisfactionq";
 $tableA = "jobsatisfactiona";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
     foreach ($_POST as $key => $value) {
-        
         if (substr($key, 0, 1) == 'q') {
             $qid = substr($key, 1); 
 
-            
             $sql = "UPDATE $tableA SET Option1 = Option1 + " . ($value == 'A' ? 1 : 0) . ",
                                         Option2 = Option2 + " . ($value == 'B' ? 1 : 0) . ",
                                         Option3 = Option3 + " . ($value == 'C' ? 1 : 0) . ",
@@ -53,13 +82,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Survey data successfully submitted!";
 }
 
-
 $sql = "SELECT * FROM $tableQ";
 $result = $conn->query($sql);
 
-
 if ($result->num_rows > 0) {
-    
+    echo "<center><table>";
+
     while ($row = $result->fetch_assoc()) {
         $qid = $row['QID'];
         $question = $row['Question'];
@@ -68,24 +96,15 @@ if ($result->num_rows > 0) {
         $option3 = $row['Option3'];
         $option4 = $row['Option4'];
 
-        
         $countSql = "SELECT Option1, Option2, Option3, Option4 FROM $tableA WHERE QID = $qid";
         $countResult = $conn->query($countSql);
 
         if ($countResult->num_rows > 0) {
-            
-            echo "<h2>$question</h2>";
-            echo "<table border='1'>";
-            echo "<tr><th>$option1</th><th>$option2</th><th>$option3</th><th>$option4</th></tr>";
+            echo "<tr><td colspan='2'><center><h2>$question</h2></center></td></tr>";
 
-        
             $countRow = $countResult->fetch_assoc();
-            echo "<tr><td>{$countRow['Option1']}</td><td>{$countRow['Option2']}</td><td>{$countRow['Option3']}</td><td>{$countRow['Option4']}</td></tr>";
 
-            echo "</table>";
-
-            
-            echo "<canvas id='chart$qid' width='200' height='200'></canvas>";
+            echo "<tr><td><center><canvas id='chart$qid' width='200' height='200'></canvas></center></td></tr>";
             echo "<script>
                     var ctx = document.getElementById('chart$qid').getContext('2d');
                     var myChart = new Chart(ctx, {
@@ -103,18 +122,24 @@ if ($result->num_rows > 0) {
                             }],
                         },
                         options: {
-                            legend: {
-                                position: 'right', // Set legend position to the right
+                            plugins: {
+                                legend: {
+                                    display: true,
+                                    position: 'right',
+                                },
                             },
                         },
                     });
-                  </script><br>";
+                </script>";
+
         } else {
-            echo "No data available for question: $question";
+            echo "<tr><td colspan='2'>No data available for question: $question</td></tr>";
         }
     }
+
+    echo "</table></center>";
 } else {
-    echo "No questions available.";
+    echo "<tr><td colspan='2'>No questions available.</td></tr>";
 }
 
 $conn->close();
