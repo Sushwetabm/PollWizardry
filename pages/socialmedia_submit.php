@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Satisfaction Survey</title>
+    <title>Social Media Usage and Impact on Relationships Survey</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
@@ -54,8 +54,8 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "pollwizardry";
-$tableQ = "jobsatisfactionq";
-$tableA = "jobsatisfactiona";
+$tableQ = "socialmediaq";
+$tableA = "socialmediaa";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

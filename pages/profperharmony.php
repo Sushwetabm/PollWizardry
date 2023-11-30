@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Job Satisfaction and Fulfillment Survey</title>
+  <title>Professional-Personal Harmony Survey</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -78,7 +78,7 @@
   $username = "root";
   $password = "";
   $dbname = "pollwizardry";
-  $table = "jobsatisfactionq";
+  $table = "profperharmonyq";
   $conn = new mysqli($servername, $username, $password, $dbname);
 
   if ($conn->connect_error) {
@@ -89,8 +89,8 @@
   $result = $conn->query($sql);
 ?>
 
-<form action="jobsatisfaction_submit.php" method="post">
-  <h1>Job Satisfaction and Fulfillment</h1>
+<form action="profperharmony_submit.php" method="post">
+  <h1>Professional-Personal Harmony</h1>
   <table>
     <thead>
       <tr>

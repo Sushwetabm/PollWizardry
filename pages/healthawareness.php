@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Job Satisfaction and Fulfillment Survey</title>
+  <title>Physical and Mental Health Awareness Survey</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #fce4ec; 
+      background-color: #fce4ec; /* Light Pink */
       margin: 0;
       padding: 0;
     }
@@ -78,7 +78,7 @@
   $username = "root";
   $password = "";
   $dbname = "pollwizardry";
-  $table = "jobsatisfactionq";
+  $table = "healthawarenessq";
   $conn = new mysqli($servername, $username, $password, $dbname);
 
   if ($conn->connect_error) {
@@ -89,8 +89,8 @@
   $result = $conn->query($sql);
 ?>
 
-<form action="jobsatisfaction_submit.php" method="post">
-  <h1>Job Satisfaction and Fulfillment</h1>
+<form action="healthawareness_submit.php" method="post">
+  <h1>Physical and Mental Health Awareness</h1>
   <table>
     <thead>
       <tr>
