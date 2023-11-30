@@ -1,174 +1,340 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Poll Wizardry</title>
-<link rel="stylesheet" type="text/css" href="styles_new.css" />
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
-.w3-bar-block .w3-bar-item {padding:20px}
-</style>
-</head>
-<body>
+  <head>
+    <title>Poll Wizardry</title>
+    <link rel="stylesheet" type="text/css" href="styles_new.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Karma"
+    />
+    <style>
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Karma", sans-serif;
+      }
+      .w3-bar-block .w3-bar-item {
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar (hidden by default) -->
+    <nav
+      class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left"
+      style="display: none; z-index: 2; width: 40%; min-width: 300px"
+      id="mySidebar"
+    >
+      <img
+        src="/PollWizardry/assets/logo.svg"
+        class="logo-menu"
+        height="250"
+        width="110"
+      />
+      <a
+        href="javascript:void(0)"
+        onclick="w3_close()"
+        class="w3-bar-item w3-button"
+        >Close Menu</a
+      >
+      <a href="#create" onclick="w3_close()" class="w3-bar-item w3-button"
+        >Create Survey</a
+      >
+      <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button"
+        >About Us</a
+      >
+      <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button"
+        >Contact Us</a
+      >
+    </nav>
 
-<!-- Sidebar (hidden by default) -->
-<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
-    <img src="/PollWizardry/assets/logo.svg" class="logo-menu" height="250" width="110">
-    <a href="javascript:void(0)" onclick="w3_close()"
-    class="w3-bar-item w3-button">Close Menu</a>
-    <a href="#create" onclick="w3_close()" class="w3-bar-item w3-button">Create Survey</a>
-    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">About Us</a>
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">Contact Us</a>
-  </nav>
-  
-  <!-- Top menu -->
-  <div class="w3-top">
-    <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
-      <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
-    </div>
-  </div>
-  
-<!-- !PAGE CONTENT! -->
-<h1 class="name">⋆⁺₊⋆☽⋆ ᑭOᒪᒪ ᗯIᘔᗩᖇᗪᖇY ⋆☾⋆⁺₊⋆</h1><br><br>
-<h1><span class="text_1"><i>Navigate Your Lifestyle</i></span>
-  <span class="text_2"><i>Shape Your Choices</i></span>
-  </h1>
-  <br>
-  <div class="survey-heading-box">
-    <h2 class="slogan"><b>UNVEIL YOUR INSIGHTS!</b></h2>
-  </div>
-<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
-
-  <!-- First Photo Grid-->
-  <div class="w3-row-padding w3-padding-16 w3-center">
-    <div class="w3-quarter">
-      <a href="jobsatisfaction.php">
-        <img src="/PollWizardry/assets/job-satisfaction.png" height="180" width="270" alt="Job Satisfaction Image">
-        <h3>Job Satisfaction and Fulfillment</h3>
-        <p>Explore and share your insights on job satisfaction and fulfillment by participating in our brief survey to enhance workplace well-being.</p>
-      </a>
-    </div>
-    <div class="w3-quarter">
-      <a href="profperharmony.php">
-      <img src="/PollWizardry/assets/work-life.png" height="180" width="270">
-      <h3>Professional-Personal Harmony</h3>
-      <p>Gain insights into your weekly workload, assess the impact on personal life, and share your strategies for maintaining a healthy balance</p>
-      </a>
-    </div>
-    <div class="w3-quarter">
-      <a href="educationsatisfaction.php">
-      <img src="/PollWizardry/assets/education.jpg" height="180" width="270">
-      <h3>Satisfaction with Educational Experiences </h3>
-      <p>Reflect on your educational journey with our Educational Experiences Survey!</p>
-      </a>
-    </div>
-    <div class="w3-quarter">
-      <a href="savingbehavior.php">
-      <img src="/PollWizardry/assets/saving.jpg" height="180" width="270">
-      <h3>Saving and Investment Behavior</h3>
-      <p>Share your insights to better understand and enhance your financial well-being</p>
-      </a>
-    </div>
-  </div>
-  
-  <!-- Second Photo Grid-->
-  <div class="w3-row-padding w3-padding-16 w3-center">
-    <div class="w3-quarter">
-      <a href="healthawareness.php">
-      <img src="/PollWizardry/assets/health.png" height="180" width="270" >
-      <h3>Physical and Mental Health Awareness</h3>
-      <p>Evaluate your physical health, exercise habits, and stress levels while sharing insights on mental health practices</p>
-      </a>
-    </div>
-    <div class="w3-quarter">
-      <a href="socialmedia.php">
-      <img src="/PollWizardry/assets/social media.jpg" height="180" width="270">
-      <h3>Social Media Usage and Impact on Relationships</h3>
-      <p>Embark on a journey to understand the intersection of technology and relationships</p>
-      </a>
-    </div>
-    <div class="w3-quarter">
-      <img src="/PollWizardry/assets/tech usage.jpg" height="180" width="270">
-      <h3>Technology Usage Patterns</h3>
-      <p>Explore your device upgrade patterns, preferred social media platforms, and attitudes towards online privacy.</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="/PollWizardry/assets/activism.jpg" height="180" width="270">
-      <h3>Views on Social Issues and Activism</h3>
-      <p>Share your passions, engagement levels, and beliefs about individual responsibility for social change.</p>
-    </div>
-  </div>
-
-  <!-- Third Photo Grid-->
-  <div class="w3-row-padding w3-padding-16 w3-center">
-    <div class="w3-quarter">
-      <img src="/PollWizardry/assets/self-development.jpg" height="180" width="270" >
-      <h3>Personal Development Initiatives</h3>
-      <p>Reflect on goal-setting habits, identify focus areas, and share insights into your journey of self-improvement. </p>
-    </div>
-    <div class="w3-quarter">
-      <img src="/PollWizardry/assets/travel.jpg" height="180" width="270">
-      <h3>Travel Preferences and Experiences</h3>
-      <p>Share your travel habits, destination preferences, and the factors shaping your adventures.</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="/PollWizardry/assets/climate-change.jpg" height="180" width="270">
-      <h3>Views on Climate Change and Conservation</h3>
-      <p> Share your views on climate concerns, conservation efforts, and the influence of environmental consciousness on daily choices.</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="/PollWizardry/assets/emerging tech.jpg" height="180" width="270">
-      <h3>Attitudes Toward Emerging Technologies</h3>
-      <p>Share your insights on interest levels, anticipated impacts, comfort with automation, and personal adoption of cutting-edge technologies</p>
-    </div>
-  </div>
-
-  
-  <hr id="about">
-
-  <!-- About Section -->
-  <div class="w3-container w3-padding-32 w3-center">  
-    <h3><u>About Us</u></h3>
-    <p>Welcome to Poll Wizardry, your enchanting portal to seamless survey creation and a treasure trove of valuable data! At Poll Wizardry, we believe that research should be as magical as it is meaningful. Whether you're embarking on a personal exploration or representing an esteemed organization, we've crafted the perfect wand for all your survey needs.</p><br>
-    <h3><u>Our Vision</u></h3>
-    <p>At Poll Wizardry, we envision a world where data collection is as accessible as it is powerful. Our vision is to empower individuals and organizations with the tools they need to unravel the mysteries of insights through enchanting surveys.</p><br>
-    <h3><u>Why Choose Poll Wizardry?</u></h3>
-    <p>✨ User-Friendly Magic: Navigate our platform with the ease of a seasoned sorcerer. No magical training required!<br>
-    ✨ Endless Customization: Tailor your surveys to perfection with our array of customization options.<br>
-    ✨ Knowledge at Your Fingertips: Access a wealth of survey forms in our database, a testament to the collective wisdom of the Poll Wizardry community.</p><br>
-    <p><i>Embark on your survey journey with Poll Wizardry, where curiosity meets magic & insights are just a spell away!</i></p>
-  </div>
-  <hr>
-  
-  <!-- Footer -->
-  <footer class="w3-row-padding w3-padding-32">
-    <div class="w3-third">
-      <h3>Contact Us</h3>
-      <ul>
-        <li class="mail"><a href="mailto:sushwetabm@gmail.com">sushwetabm@gmail.com</a></li>
-        <li class="mail"><a href="mailto:hansawani07@gmail.com">hansawani07@gmail.com</a></li>
-        <li class="mail"><a href="mailto:tanyasinghmadnavat@gmail.com">tanyasinghmadnavat@gmail.com</a></li>
-      </ul>
+    <!-- Top menu -->
+    <div class="w3-top">
+      <div class="w3-white w3-xlarge" style="max-width: 1200px; margin: auto">
+        <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
+      </div>
     </div>
 
-  </footer>
+    <!-- !PAGE CONTENT! -->
+    <h1 class="name">⋆⁺₊⋆☽⋆ ᑭOᒪᒪ ᗯIᘔᗩᖇᗪᖇY ⋆☾⋆⁺₊⋆</h1>
+    <br /><br />
+    <h1>
+      <span class="text_1"><i>Navigate Your Lifestyle</i></span>
+      <span class="text_2"><i>Shape Your Choices</i></span>
+    </h1>
+    <br />
+    <div class="survey-heading-box">
+      <h2 class="slogan"><b>UNVEIL YOUR INSIGHTS!</b></h2>
+    </div>
+    <div
+      class="w3-main w3-content w3-padding"
+      style="max-width: 1200px; margin-top: 100px"
+    >
+      <!-- First Photo Grid-->
+      <div class="w3-row-padding w3-padding-16 w3-center">
+        <div class="w3-quarter">
+          <a href="jobsatisfaction.php">
+            <img
+              src="/PollWizardry/assets/job-satisfaction.png"
+              height="180"
+              width="270"
+              alt="Job Satisfaction Image"
+            />
+            <h3>Job Satisfaction and Fulfillment</h3>
+            <p>
+              Explore and share your insights on job satisfaction and
+              fulfillment by participating in our brief survey to enhance
+              workplace well-being.
+            </p>
+          </a>
+        </div>
+        <div class="w3-quarter">
+          <a href="profperharmony.php">
+            <img
+              src="/PollWizardry/assets/work-life.png"
+              height="180"
+              width="270"
+            />
+            <h3>Professional-Personal Harmony</h3>
+            <p>
+              Gain insights into your weekly workload, assess the impact on
+              personal life, and share your strategies for maintaining a healthy
+              balance
+            </p>
+          </a>
+        </div>
+        <div class="w3-quarter">
+          <a href="educationsatisfaction.php">
+            <img
+              src="/PollWizardry/assets/education.jpg"
+              height="180"
+              width="270"
+            />
+            <h3>Satisfaction with Educational Experiences</h3>
+            <p>
+              Reflect on your educational journey with our Educational
+              Experiences Survey!
+            </p>
+          </a>
+        </div>
+        <div class="w3-quarter">
+          <a href="savingbehavior.php">
+            <img
+              src="/PollWizardry/assets/saving.jpg"
+              height="180"
+              width="270"
+            />
+            <h3>Saving and Investment Behavior</h3>
+            <p>
+              Share your insights to better understand and enhance your
+              financial well-being
+            </p>
+          </a>
+        </div>
+      </div>
 
-<!-- End page content -->
-</div>
+      <!-- Second Photo Grid-->
+      <div class="w3-row-padding w3-padding-16 w3-center">
+        <div class="w3-quarter">
+          <a href="healthawareness.php">
+            <img
+              src="/PollWizardry/assets/health.png"
+              height="180"
+              width="270"
+            />
+            <h3>Physical and Mental Health Awareness</h3>
+            <p>
+              Evaluate your physical health, exercise habits, and stress levels
+              while sharing insights on mental health practices
+            </p>
+          </a>
+        </div>
+        <div class="w3-quarter">
+          <a href="socialmedia.php">
+            <img
+              src="/PollWizardry/assets/social media.jpg"
+              height="180"
+              width="270"
+            />
+            <h3>Social Media Usage and Impact on Relationships</h3>
+            <p>
+              Embark on a journey to understand the intersection of technology
+              and relationships
+            </p>
+          </a>
+        </div>
+        <div class="w3-quarter">
+          <a href="techusagepattern.php">
+            <img
+              src="/PollWizardry/assets/tech usage.jpg"
+              height="180"
+              width="270"
+            />
+            <h3>Technology Usage Patterns</h3>
+            <p>
+              Explore your device upgrade patterns, preferred social media
+              platforms, and attitudes towards online privacy.
+            </p>
+          </a>
+        </div>
+        <div class="w3-quarter">
+          <a href="viewsonsocissue.php">
+            <img
+              src="/PollWizardry/assets/activism.jpg"
+              height="180"
+              width="270"
+            />
+            <h3>Views on Social Issues and Activism</h3>
+            <p>
+              Share your passions, engagement levels, and beliefs about
+              individual responsibility for social change.
+            </p>
+          </a>
+        </div>
+      </div>
 
-<script>
-// Script to open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-}
-</script>
+      <!-- Third Photo Grid-->
+      <div class="w3-row-padding w3-padding-16 w3-center">
+        <div class="w3-quarter">
+          <a href="personaldev.php">
+            <img
+              src="/PollWizardry/assets/self-development.jpg"
+              height="180"
+              width="270"
+            />
+            <h3>Personal Development Initiatives</h3>
+            <p>
+              Reflect on goal-setting habits, identify focus areas, and share
+              insights into your journey of self-improvement.
+            </p>
+          </a>
+        </div>
+        <div class="w3-quarter">
+          <a href="travelpref.php">
+            <img
+              src="/PollWizardry/assets/travel.jpg"
+              height="180"
+              width="270"
+            />
+            <h3>Travel Preferences and Experiences</h3>
+            <p>
+              Share your travel habits, destination preferences, and the factors
+              shaping your adventures.
+            </p>
+          </a>
+        </div>
+        <div class="w3-quarter">
+          <a href="viewsonclimate.php">
+            <img
+              src="/PollWizardry/assets/climate-change.jpg"
+              height="180"
+              width="270"
+            />
+            <h3>Views on Climate Change and Conservation</h3>
+            <p>
+              Share your views on climate concerns, conservation efforts, and
+              the influence of environmental consciousness on daily choices.
+            </p>
+          </a>
+        </div>
+        <div class="w3-quarter">
+          <a href="emergingtech.php">
+            <img
+              src="/PollWizardry/assets/emerging tech.jpg"
+              height="180"
+              width="270"
+            />
+            <h3>Attitudes Toward Emerging Technologies</h3>
+            <p>
+              Share your insights on interest levels, anticipated impacts,
+              comfort with automation, and personal adoption of cutting-edge
+              technologies
+            </p>
+          </a>
+        </div>
+      </div>
 
-</body>
+      <hr id="about" />
+
+      <!-- About Section -->
+      <div class="w3-container w3-padding-32 w3-center">
+        <h3><u>About Us</u></h3>
+        <p>
+          Welcome to Poll Wizardry, your enchanting portal to seamless survey
+          creation and a treasure trove of valuable data! At Poll Wizardry, we
+          believe that research should be as magical as it is meaningful.
+          Whether you're embarking on a personal exploration or representing an
+          esteemed organization, we've crafted the perfect wand for all your
+          survey needs.
+        </p>
+        <br />
+        <h3><u>Our Vision</u></h3>
+        <p>
+          At Poll Wizardry, we envision a world where data collection is as
+          accessible as it is powerful. Our vision is to empower individuals and
+          organizations with the tools they need to unravel the mysteries of
+          insights through enchanting surveys.
+        </p>
+        <br />
+        <h3><u>Why Choose Poll Wizardry?</u></h3>
+        <p>
+          ✨ User-Friendly Magic: Navigate our platform with the ease of a
+          seasoned sorcerer. No magical training required!<br />
+          ✨ Endless Customization: Tailor your surveys to perfection with our
+          array of customization options.<br />
+          ✨ Knowledge at Your Fingertips: Access a wealth of survey forms in
+          our database, a testament to the collective wisdom of the Poll
+          Wizardry community.
+        </p>
+        <br />
+        <p>
+          <i
+            >Embark on your survey journey with Poll Wizardry, where curiosity
+            meets magic & insights are just a spell away!</i
+          >
+        </p>
+      </div>
+      <hr />
+
+      <!-- Footer -->
+      <footer class="w3-row-padding w3-padding-32">
+        <div class="w3-third">
+          <h3>Contact Us</h3>
+          <ul>
+            <li class="mail">
+              <a href="mailto:sushwetabm@gmail.com">sushwetabm@gmail.com</a>
+            </li>
+            <li class="mail">
+              <a href="mailto:hansawani07@gmail.com">hansawani07@gmail.com</a>
+            </li>
+            <li class="mail">
+              <a href="mailto:tanyasinghmadnavat@gmail.com"
+                >tanyasinghmadnavat@gmail.com</a
+              >
+            </li>
+          </ul>
+        </div>
+      </footer>
+
+      <!-- End page content -->
+    </div>
+
+    <script>
+      // Script to open and close sidebar
+      function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+      }
+
+      function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+      }
+    </script>
+  </body>
 </html>

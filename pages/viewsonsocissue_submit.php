@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Satisfaction Survey</title>
+    <title>Views on Social Issues and Activism Survey</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
@@ -54,8 +54,8 @@ $servername = "localhost";
 $username = "root";
 $password = "Sush#2004";
 $dbname = "pollwizardry";
-$tableQ = "jobsatisfactionq";
-$tableA = "jobsatisfactiona";
+$tableQ = "socialissueq";
+$tableA = "socialissuea";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
