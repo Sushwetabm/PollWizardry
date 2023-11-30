@@ -6,11 +6,44 @@
     <title>Job Satisfaction Survey</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: rgba(255, 206, 86, 0.7);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 70%;
+            margin-bottom: 20px;
+            background-color: #f4f4f4;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
         canvas {
-            max-width: 200px;
-            max-height: 200px;
+            max-width: 80%;
+            max-height: 180px;
             width: auto;
             height: auto;
+            display: block;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -59,7 +92,14 @@ $result = $conn->query($sql);
 
 
 if ($result->num_rows > 0) {
+<<<<<<< Updated upstream
     
+=======
+    // Open the table
+    echo "<center><table>";
+
+    // Display data in tables and pie charts
+>>>>>>> Stashed changes
     while ($row = $result->fetch_assoc()) {
         $qid = $row['QID'];
         $question = $row['Question'];
@@ -73,19 +113,27 @@ if ($result->num_rows > 0) {
         $countResult = $conn->query($countSql);
 
         if ($countResult->num_rows > 0) {
+<<<<<<< Updated upstream
             
             echo "<h2>$question</h2>";
             echo "<table border='1'>";
             echo "<tr><th>$option1</th><th>$option2</th><th>$option3</th><th>$option4</th></tr>";
+=======
+            // Display question and options in a table row
+            echo "<tr><td colspan='2'><center><h2>$question</h2></center></td></tr>";
+>>>>>>> Stashed changes
 
         
             $countRow = $countResult->fetch_assoc();
-            echo "<tr><td>{$countRow['Option1']}</td><td>{$countRow['Option2']}</td><td>{$countRow['Option3']}</td><td>{$countRow['Option4']}</td></tr>";
 
-            echo "</table>";
-
+<<<<<<< Updated upstream
             
             echo "<canvas id='chart$qid' width='200' height='200'></canvas>";
+=======
+            // Create a canvas for the pie chart with reduced size
+            // Create a canvas for the pie chart with reduced size
+            echo "<tr><td><center><canvas id='chart$qid' width='200' height='200'></canvas></center></td></tr>";
+>>>>>>> Stashed changes
             echo "<script>
                     var ctx = document.getElementById('chart$qid').getContext('2d');
                     var myChart = new Chart(ctx, {
@@ -103,18 +151,25 @@ if ($result->num_rows > 0) {
                             }],
                         },
                         options: {
-                            legend: {
-                                position: 'right', // Set legend position to the right
+                            plugins: {
+                                legend: {
+                                    display: true,
+                                    position: 'right',
+                                },
                             },
                         },
                     });
-                  </script><br>";
+                </script>";
+
         } else {
-            echo "No data available for question: $question";
+            echo "<tr><td colspan='2'>No data available for question: $question</td></tr>";
         }
     }
+
+    // Close the table
+    echo "</table></center>";
 } else {
-    echo "No questions available.";
+    echo "<tr><td colspan='2'>No questions available.</td></tr>";
 }
 
 $conn->close();
