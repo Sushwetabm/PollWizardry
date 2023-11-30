@@ -6,110 +6,107 @@
   <title>Job Satisfaction and Fulfillment Survey</title>
   <style>
     body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  margin: 0;
-  padding: 0;
-}
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fce4ec; /* Light Pink */
+      margin: 0;
+      padding: 0;
+    }
 
-form {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+    form {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-h1 {
-  text-align: center;
-  color: #333;
-}
+    h1 {
+      text-align: center;
+      color: rgb(119, 7, 55);
+      font-family: sans-serif;
+    }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-top: 20px;
-}
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
 
-th,
-td {
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: left;
-}
+    th, td {
+      border: 1px solid #ddd;
+      padding: 15px;
+      text-align: left;
+    }
 
-th {
-  background-color: #f2f2f2;
-}
+    th {
+      background-color: rgb(248, 200, 220); 
+      color: #fff;
+    }
 
-label {
-  display: block;
-  margin-bottom: 5px;
-}
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: #333;
+    }
 
-input[type="radio"] {
-  margin-right: 5px;
-}
+    input[type="radio"] {
+      margin-right: 8px;
+    }
 
-input[type="submit"] {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-}
+    input[type="submit"] {
+      background-color: rgb(227, 115, 131);
+      color: white;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
 
-input[type="submit"]:hover {
-  background-color: #45a049;
-}
-</style>
+    input[type="submit"]:hover {
+      background-color: rgb(170, 51, 106); 
+    }
+  </style>
 </head>
 
 <body>
 
 <?php
-
   $servername = "localhost";
   $username = "root";
-  $password = "";
+  $password = "Sush#2004";
   $dbname = "pollwizardry";
   $table = "jobsatisfactionq";
-
   $conn = new mysqli($servername, $username, $password, $dbname);
-
 
   if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
   }
 
-
   $sql = "SELECT * FROM $table";
   $result = $conn->query($sql);
 ?>
 
-  <form action="jobsatisfaction_submit.php" method="post">
-    <h1>Job Satisfaction and Fulfillment</h1>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Question</th>
-          <th>Options</th>
-        </tr>
-      </thead>
-      <tbody>
+<form action="jobsatisfaction_submit.php" method="post">
+  <h1>Job Satisfaction and Fulfillment</h1>
+  <table>
+    <thead>
+      <tr>
+        <th style="background-color: rgb(248, 200, 220); color: rgb(119, 7, 55);">Question</th>
+        <th style="background-color: rgb(248, 200, 220); color: rgb(119, 7, 55);">Options</th>
+      </tr>
+    </thead>
+    <tbody>
 
 <?php
   if ($result->num_rows > 0) {
-    // Output data of each row
     while($row = $result->fetch_assoc()) {
       echo "<tr>";
-      echo "<td>" . $row["Question"] . "</td>";
+      echo "<td style='background-color: #ecf0f1; color: #333;'>" . $row["Question"] . "</td>";
       echo "<td>";
-      echo "<label><input type='radio' name='q" . $row["QID"] . "' value='A'> A) " . $row["Option1"] . "</label>";
+      echo "<label><input type='radio' name='q" . $row["QID"] . "' value='A' required> A) " . $row["Option1"] . "</label>";
       echo "<label><input type='radio' name='q" . $row["QID"] . "' value='B'> B) " . $row["Option2"] . "</label>";
       echo "<label><input type='radio' name='q" . $row["QID"] . "' value='C'> C) " . $row["Option3"] . "</label>";
       echo "<label><input type='radio' name='q" . $row["QID"] . "' value='D'> D) " . $row["Option4"] . "</label>";
@@ -123,12 +120,12 @@ input[type="submit"]:hover {
   $conn->close();
 ?>
 
-      </tbody>
-    </table>
+    </tbody>
+  </table>
 
-    <br/>
-    <input type="submit" value="Submit">
-  </form>
+  <br/>
+  <input type="submit" value="Submit">
+</form>
 
 </body>
 </html>

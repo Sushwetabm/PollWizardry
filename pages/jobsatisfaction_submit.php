@@ -20,7 +20,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "Sush#2004";
 $dbname = "pollwizardry";
 $tableQ = "jobsatisfactionq";
 $tableA = "jobsatisfactiona";
@@ -78,7 +78,7 @@ if ($result->num_rows > 0) {
             echo "<table border='1'>";
             echo "<tr><th>$option1</th><th>$option2</th><th>$option3</th><th>$option4</th></tr>";
 
-            /
+        
             $countRow = $countResult->fetch_assoc();
             echo "<tr><td>{$countRow['Option1']}</td><td>{$countRow['Option2']}</td><td>{$countRow['Option3']}</td><td>{$countRow['Option4']}</td></tr>";
 
