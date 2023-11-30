@@ -71,22 +71,21 @@ input[type="submit"]:hover {
 <body>
 
 <?php
-  // Replace these variables with your actual database connection details
+
   $servername = "localhost";
   $username = "root";
   $password = "";
   $dbname = "pollwizardry";
   $table = "jobsatisfactionq";
 
-  // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
 
-  // Check connection
+
   if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
   }
 
-  // Fetch questions and options from the database
+
   $sql = "SELECT * FROM $table";
   $result = $conn->query($sql);
 ?>
@@ -121,7 +120,6 @@ input[type="submit"]:hover {
     echo "<tr><td colspan='2'>0 results</td></tr>";
   }
 
-  // Close connection
   $conn->close();
 ?>
 
