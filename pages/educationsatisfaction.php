@@ -76,7 +76,7 @@
 <?php
   $servername = "localhost";
   $username = "root";
-  $password = "";
+  $password = "Sush#2004";
   $dbname = "pollwizardry";
   $table = "educationsatisfactionq";
   $conn = new mysqli($servername, $username, $password, $dbname);

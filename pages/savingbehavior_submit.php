@@ -52,7 +52,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "Sush#2004";
 $dbname = "pollwizardry";
 $tableQ = "savingbehaviorq";
 $tableA = "savingbehaviora";
