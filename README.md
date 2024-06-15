@@ -1,1 +1,2 @@
 # PollWizardry
+An easy-to-use survey platform that helps people become more self-aware by examining and thinking about their behaviours in both their personal and professional lives. Users of our platform can explore various parts of their lives and see trends in their behaviour by taking surveys on a wide range of topics. By asking thought-provoking and perceptive questions, users can become more self-aware.
